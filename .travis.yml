@@ -22,9 +22,9 @@ before_deploy:
   - cp appspec.yml before-deploy/
   - cp build/libs/*.jar before-deploy/
   - cp scripts/*.sh before-deploy/
-  - cd berfore-deploy && zip -r berfore-deploy * #berfore-deploy 이동 후 전체압축
+  - cd before-deploy && zip -r before-deploy * #before-deploy 이동 후 전체압축
   - cd ../ && mkdir -p deploy # 상위디렉토리로 이동후 deploy 디렉토리 생성
-  - mv berfore-deploy/berfore-deploy.zip deploy/project.zip
+  - mv before-deploy/before-deploy.zip deploy/project.zip
 
 deploy:
   - provider: s3
