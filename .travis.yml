@@ -19,9 +19,9 @@ script: "./gradlew clean build"
 
 before_deploy:
   - mkdir -p berfore-deploy #zip에 포함시킬 파일들을 담을 디렉토리생성
-  - cp scripts/*.sh before-deploy/
   - cp appspec.yml before-deploy/
   - cp build/libs/*.jar before-deploy/
+  - cp scripts/*.sh before-deploy/
   - cd berfore-deploy && zip -r berfore-deploy * #berfore-deploy 이동 후 전체압축
   - cd ../ && mkdir -p deploy # 상위디렉토리로 이동후 deploy 디렉토리 생성
   - mv berfore-deploy/berfore-deploy.zip deploy/project.zip
